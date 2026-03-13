@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///Users/crm/Downloads/fives-assembly_11.html -->
+<!-- saved from url=(0050)file:///Users/crm/Downloads/fives-assembly_12.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -866,8 +866,7 @@ function lockDesarrolloByDate() {
 
 // ── Foro closed check for public form ───────────────────────────────────────
 async function initPublicForm() {
-  // Don't run on admin URL
-  if (window.location.hash.includes("admin") || window.location.search.includes("admin")) return;
+  if (window._IS_ADMIN) return;
   const abierto = await checkForoAbierto();
   if (abierto) {
     lockDesarrolloByDate();
@@ -898,18 +897,17 @@ async function initPublicForm() {
 }
 
 // ── Init ────────────────────────────────────────────────────────────────────
+window._IS_ADMIN = !!(window.location.hash.includes("admin") || window.location.search.includes("admin"));
+
 applyTranslations();
 lockDesarrolloByDate();
 
-// Admin access FIRST — synchronous, before any async calls
-const isAdminURL = window.location.hash.includes("admin") || window.location.search.includes("admin");
-if (isAdminURL) {
+if (window._IS_ADMIN) {
   document.getElementById("btn-admin").style.display = "";
   document.getElementById("btn-form").style.borderRight = "none";
   setTab("admin");
 } else {
-  // Small delay ensures admin check runs first before any async foro check
-  setTimeout(() => initPublicForm(), 0);
+  initPublicForm();
 }
 </script>
 
