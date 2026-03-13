@@ -514,19 +514,20 @@ function setLang(l) {
 
 function applyTranslations() {
   const tr = t();
-  document.getElementById("header-sub").textContent = tr.headerSub;
-  document.getElementById("btn-form").textContent = tr.tabForm;
-  document.getElementById("btn-admin").textContent = tr.tabAdmin;
-  document.getElementById("form-intro-text").innerHTML = tr.formIntro;
-  document.getElementById("lbl-nombre").textContent = tr.lblNombre;
-  document.getElementById("inp-nombre").placeholder = tr.phNombre;
-  document.getElementById("lbl-desarrollo").textContent = tr.lblDesarrollo;
-  document.getElementById("inp-desarrollo").options[0].text = tr.phDesarrollo;
-  document.getElementById("lbl-residencia").textContent = tr.lblResidencia;
-  document.getElementById("inp-residencia").placeholder = tr.phResidencia;
-  document.getElementById("lbl-pregunta").textContent = tr.lblPregunta;
-  document.getElementById("inp-pregunta").placeholder = tr.phPregunta;
-  document.getElementById("submit-btn").textContent = tr.submitBtn;
+  const $= id => document.getElementById(id);
+  $("header-sub") && ($("header-sub").textContent = tr.headerSub);
+  $("btn-form") && ($("btn-form").textContent = tr.tabForm);
+  $("btn-admin") && ($("btn-admin").textContent = tr.tabAdmin);
+  $("form-intro-text") && ($("form-intro-text").innerHTML = tr.formIntro);
+  $("lbl-nombre") && ($("lbl-nombre").textContent = tr.lblNombre);
+  $("inp-nombre") && ($("inp-nombre").placeholder = tr.phNombre);
+  $("lbl-desarrollo") && ($("lbl-desarrollo").textContent = tr.lblDesarrollo);
+  if ($("inp-desarrollo") && $("inp-desarrollo").options[0]) $("inp-desarrollo").options[0].text = tr.phDesarrollo;
+  $("lbl-residencia") && ($("lbl-residencia").textContent = tr.lblResidencia);
+  $("inp-residencia") && ($("inp-residencia").placeholder = tr.phResidencia);
+  $("lbl-pregunta") && ($("lbl-pregunta").textContent = tr.lblPregunta);
+  $("inp-pregunta") && ($("inp-pregunta").placeholder = tr.phPregunta);
+  $("submit-btn") && ($("submit-btn").textContent = tr.submitBtn);
   document.getElementById("success-title").textContent = tr.successTitle;
   document.getElementById("another-btn").textContent = tr.anotherBtn;
   document.getElementById("admin-title").textContent = tr.adminTitle;
