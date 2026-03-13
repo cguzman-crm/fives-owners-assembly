@@ -586,11 +586,14 @@ function showView(id) {
 
 // ── Form ────────────────────────────────────────────────────────────────────
 function checkValid() {
-  const nombre = document.getElementById("inp-nombre").value.trim();
+  const inp = document.getElementById("inp-nombre");
+  if (!inp) return;
+  const nombre = inp.value.trim();
   const desarrollo = document.getElementById("inp-desarrollo").value;
   const pregunta = document.getElementById("inp-pregunta").value.trim();
   const valid = nombre.length > 0 && desarrollo.length > 0 && pregunta.length >= 10;
   const btn = document.getElementById("submit-btn");
+  if (!btn) return;
   btn.disabled = !valid;
   btn.classList.toggle("ready", valid);
   btn.textContent = t().submitBtn;
