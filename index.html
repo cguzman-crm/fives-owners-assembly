@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -544,21 +545,21 @@ function applyTranslations() {
   $("lbl-pregunta") && ($("lbl-pregunta").textContent = tr.lblPregunta);
   $("inp-pregunta") && ($("inp-pregunta").placeholder = tr.phPregunta);
   $("submit-btn") && ($("submit-btn").textContent = tr.submitBtn);
-  document.getElementById("success-title").textContent = tr.successTitle;
-  document.getElementById("another-btn").textContent = tr.anotherBtn;
-  document.getElementById("admin-title").textContent = tr.adminTitle;
-  document.getElementById("lbl-pwd").textContent = tr.lblPwd;
-  document.getElementById("inp-pwd").placeholder = tr.phPwd;
-  document.getElementById("admin-login-btn").textContent = tr.adminLoginBtn;
-  document.getElementById("stat-total-lbl").textContent = tr.statTotal;
-  document.getElementById("stat-res-lbl").textContent = tr.statRes;
-  document.getElementById("stat-top-lbl").textContent = tr.statTop;
-  document.getElementById("section-qs").textContent = tr.sectionQs;
-  document.getElementById("filter-input").placeholder = tr.filterPh;
-  document.getElementById("copy-title").textContent = tr.copyTitle;
-  document.getElementById("copy-desc").textContent = tr.copyDesc;
-  document.getElementById("copy-btn").textContent = tr.copyBtn(questions.length);
-  document.getElementById("copy-hint").textContent = tr.copyHint;
+  $("success-title") && ($("success-title").textContent = tr.successTitle);
+  $("another-btn") && ($("another-btn").textContent = tr.anotherBtn);
+  $("admin-title") && ($("admin-title").textContent = tr.adminTitle);
+  $("lbl-pwd") && ($("lbl-pwd").textContent = tr.lblPwd);
+  $("inp-pwd") && ($("inp-pwd").placeholder = tr.phPwd);
+  $("admin-login-btn") && ($("admin-login-btn").textContent = tr.adminLoginBtn);
+  $("stat-total-lbl") && ($("stat-total-lbl").textContent = tr.statTotal);
+  $("stat-res-lbl") && ($("stat-res-lbl").textContent = tr.statRes);
+  $("stat-top-lbl") && ($("stat-top-lbl").textContent = tr.statTop);
+  $("section-qs") && ($("section-qs").textContent = tr.sectionQs);
+  $("filter-input") && ($("filter-input").placeholder = tr.filterPh);
+  $("copy-title") && ($("copy-title").textContent = tr.copyTitle);
+  $("copy-desc") && ($("copy-desc").textContent = tr.copyDesc);
+  $("copy-btn") && ($("copy-btn").textContent = tr.copyBtn(questions.length));
+  $("copy-hint") && ($("copy-hint").textContent = tr.copyHint);
   checkValid();
 }
 
